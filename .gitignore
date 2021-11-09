@@ -17,3 +17,4 @@
 # API Keys
 .env
 node_modules/
+config.js

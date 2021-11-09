@@ -1,4 +1,4 @@
-require('dotenv').config()
+// require('dotenv').config()
 // console.log(process.env.MY_API_TOKEN)
 
 const form = document.getElementById('form')
@@ -9,6 +9,7 @@ const locationElement=document.getElementById('location')              // Locati
 const timeZone=document.getElementById('time-zone')             // TimeZone
 const isp=document.getElementById('isp')                // ISP
 
+var key = config.API_KEY;   
 
 let searchValue
 
@@ -21,7 +22,7 @@ form.addEventListener('submit',(e)=>{
     search.value=''
     
     const getData = async ()=>{
-        const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.API_KEY}&ipAddress=${searchValue}`)
+        const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${key}&ipAddress=${searchValue}`)
         const details = await response.json()
         console.log(details)
         
